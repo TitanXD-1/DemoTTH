@@ -1,0 +1,15 @@
+/**********************************************************************
+  Name: UserTrigger
+=======================================================================
+  Purpose: This is to handle UserTrigger Events
+=======================================================================
+    History                                                            
+    -------                                                            
+    VERSION  AUTHOR            DATE              DETAIL
+       1.0 -    Sagar Barman 06/02/2019      Initial Development
+***********************************************************************/
+trigger UserTrigger on User(before insert, before update, before delete, after insert, after update, after delete, after undelete) {
+  
+  TriggerDispatcher.run(new UserTriggerHandler());
+  
+}
